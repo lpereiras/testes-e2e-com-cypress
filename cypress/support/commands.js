@@ -17,7 +17,7 @@ Cypress.Commands.add('loginOnScratchApp', (
   { cacheSession = true } = {}
 ) => {
 
-  const login = () => {
+  const loginOnScratchApp = () => {
     cy.visit('/login')
     cy.get('#email').type(validEmailAddress, { log: false })
     cy.get('#password').type(password, { log: false })
@@ -25,8 +25,8 @@ Cypress.Commands.add('loginOnScratchApp', (
     cy.contains('h1', 'Your Notes', { timeout: 6000 }).should('be.visible')
   }
   if (cacheSession) {
-    cy.session([validEmailAddress, password], login)
+    cy.session([validEmailAddress, password], loginOnScratchApp)
   } else {
-    login()
+    loginOnScratchApp()
   }
 })
