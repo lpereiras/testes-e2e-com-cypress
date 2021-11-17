@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint cypress/**/*.js",
-    "lint:fix": "eslint cypress/**/*.js --fix"
+    "lint:fix": "eslint cypress/**/*.js --fix",
+    "cy:open": "npx cypress open",
+    "test": "npx cypress run"
   },
   "keywords": [],
   "author": "",
