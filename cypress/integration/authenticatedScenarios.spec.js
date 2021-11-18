@@ -1,4 +1,4 @@
-describe('', () => {
+describe('cenarios where authentication is a pre-requirement', () => {
   beforeEach(() => {
     cy.intercept('GET', '**/notes').as('getNotes')
     cy.intercept('GET', '**/notes**').as('getNote')
