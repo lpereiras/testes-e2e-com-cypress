@@ -17,6 +17,7 @@ describe('scenarios where authentication is a pre-requirement', () => {
     cy.editNote(noteDescription, updatedDescription, attachFile)
     cy.wait('@getNotes')
 
+
     cy.deleteNote(noteDescription, updatedDescription)
     cy.wait('@getNotes')
     cy.contains('.list-group-item', noteDescription).should('not.exist')
@@ -33,7 +34,7 @@ describe('scenarios where authentication is a pre-requirement', () => {
     })
   })
 
-  it('logs out', () => {
+  it('logs out', { tags: '@desktop-and-tablet' }, () => {
     cy.visit('/')
     cy.wait('@getNotes')
 
