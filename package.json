@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cy:open": "npx cypress open",
+    "cy:open:tablet": "cypress open --config viewportWidth=767,viewportHeight=480",
     "lint": "eslint cypress/**/*.js",
     "lint:fix": "eslint cypress/**/*.js --fix",
-    "cy:open": "npx cypress open",
-    "test": "npx cypress run"
+    "test": "npx cypress run",
+    "test:tablet": "cypress run --config viewportWidth=767,viewportHeight=480 --spec cypress/integration/authenticatedScenarios.spec.js"
   },
   "keywords": [],
   "author": "",
